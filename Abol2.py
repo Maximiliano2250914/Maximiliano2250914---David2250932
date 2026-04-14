@@ -1,4 +1,5 @@
 from bigtree import Node
+from bigtree import print_tree
 print("Seleccione una opcion")
 print("Digite solo numeros enteros para los nodos")
 
@@ -20,7 +21,6 @@ while cent!=5:
         cent2=0
         for i in range (0,1):
             a=int(input("Digite el nombre del nodo: "))
-            par=str(input("Digite el padre del nodo: "))
             Node(a,parent=root)
         root.children
         while cent2!=2:
@@ -38,13 +38,16 @@ while cent!=5:
                 cent2=2
             else:
                 print("Opcion invalida")
+        print_tree(root)
     elif opc==2:
-        print(root.value)
-    elif opc==3:
         cont=0
         for i in root.descendants:
             cont+=1
         print(f"Hay {cont+1} nodos")
+    elif opc==3:
+        print(f"El orden del arbol es de 2")
+    elif opc==4:
+        print(f"La altura del arbol es de {root.height}")
     elif opc==5:
         cent=5
     else:
